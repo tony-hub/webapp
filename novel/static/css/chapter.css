@@ -88,7 +88,7 @@ section {
   z-index: -1;
   position: fixed;
   background-size: cover;
-  background-image: url("http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1309/16/c0/25746851_1379312250560.jpg");
+  background-image: url("../img/background.png");
   background-repeat: no-repeat;
   background-position: 0 0;
   background-attachment: fixed;

@@ -25,7 +25,7 @@ SECRET_KEY = '8q7^-xq523@faa@h5f4=y_xem61)ahrgtp#kd_oo$iv(cao#@d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'novel',
 ]
 
 MIDDLEWARE = [
@@ -76,8 +77,14 @@ WSGI_APPLICATION = 'webapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+         'ENGINE': 'django.db.backends.mysql',
+        'NAME':'novel',
+        'USER':'novel',
+        'PASSWORD':'qiangzi()',
+        'HOST':'mysql.litianqiang.com',
+        'PORT':7150,
     }
 }
 

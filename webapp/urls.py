@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-
+from novel import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', views.index,name='index'),
+    url(r'^sort/(?P<type>\d+)/(?P<novelid>\d+)/$', views.more,name='sort'),
+    url(r'^content/(?P<novelid>\d+)/$', views.detail,name='content'),
+    url(r'^chapter/(?P<chapterid>\d+)/$', views.chapter,name='chapter'),
 ]
