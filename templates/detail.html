@@ -6,7 +6,7 @@
     <meta name="Keywords" content="" />
     <meta name="description" content="" />
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" /> -->
-    <title>{{ novel.novelname }}-潭州python图书馆-志灿</title>
+    <title>{{ novel.novelname }}-Python探索馆-志灿</title>
     <!-- Main Theme -->
     <link rel="stylesheet" href="{% static 'css/detail.css' %}" />
 
@@ -55,7 +55,7 @@
       </div><!-- ./nav -->
 
       <div class="search">
-        <form action="search.html" method="get" target="_blank">
+        <form action="{% url 'search' %}" method="get" target="_blank">
           <input name="kw" placeholder="搜索书名" class="search-inp" type="text" maxlength="10" />
           <input id="search-submit-btn" type="submit" style="display: none;" />
           <label for="search-submit-btn">

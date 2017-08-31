@@ -6,9 +6,11 @@
     <meta name="Keywords" content="" />
     <meta name="description" content="" />
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" /> -->
+   {% block title %}
     <title>Python探索馆 - 志灿</title>
+    {% endblock %}
     <!-- Main Theme -->
-      {% block style %}
+      {% block css %}
         <link rel="stylesheet" href="{% static 'css/style.min.css' %}" />
       {% endblock %}
 
@@ -56,7 +58,7 @@
       </div><!-- ./nav -->
 
       <div class="search">
-        <form action="search.html" method="get" target="_blank">
+        <form action="{% url 'search' %}" method="get" target="_blank">
           <input name="kw" placeholder="搜索书名" class="search-inp" type="text" maxlength="10" />
           <input id="search-submit-btn" type="submit" style="display: none;" />
           <label for="search-submit-btn">
@@ -442,7 +444,10 @@
 
 <!-- Main Plugin -->
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-<script src="{% static 'js/index.js'  %} "></script>
+{% block js %}
+    <script src="{% static 'js/index.js'  %} "></script>
+{% endblock %}
+
 
 </body>
 </html>

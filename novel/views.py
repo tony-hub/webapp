@@ -55,3 +55,11 @@ def chapter(request,chapterid):
         down = ls[ls.index(int(chapterid))+1]
     return render_to_response('chapter.html',locals())
 
+def search(request):
+    keyword=request.GET.get('kw','')
+    if keyword:
+        display=NovelCopy.objects.filter(novelname__icontains=keyword).all()
+    else:
+        display=NovelCopy.objects.filter().order_by('?').all()[:100]
+    random = NovelCopy.objects.filter().order_by('?').all()[:6]
+    return render_to_response('search.html',locals())
